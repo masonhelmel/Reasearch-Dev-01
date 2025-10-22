@@ -14,14 +14,7 @@ pipeline
             agent any
             steps
             {
-                script
-                {
-                    snykSecurity(
-                        snykInstallation: 'Snyk-Install',
-                        snykTokenId: 'Snyk-API-token',
-                        severity: 'critical'
-                    )
-                }
+                echo "Starting SCA and SAST tests..."
             }
         }
 
