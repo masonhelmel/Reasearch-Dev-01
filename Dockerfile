@@ -1,17 +1,10 @@
-# Use a lightweight Node.js image
-FROM node:18-alpine
+# Use Nginx to serve static files
+FROM nginx:alpine
 
-# Set the working directory
-WORKDIR /app
+# Copy your website files into Nginx HTML folder
+COPY . /usr/share/nginx/html
 
-# Copy package files first and install dependencies
+# Expose default HTTP port
+EXPOSE 80
 
-
-# Copy the rest of the code
-COPY . .
-
-# Expose Port 3000
-EXPOSE 3000
-
-# Start the app
-CMD ["node", "main.js"]
+# Nginx starts automatically

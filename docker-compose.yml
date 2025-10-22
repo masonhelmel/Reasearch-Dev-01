@@ -2,12 +2,7 @@ version: "3.8"
 services:
   real-estate:
     image: helmasw/real-estate:latest
-    build: . 
+    build: .
     container_name: real-estate
     ports:
-      - "80:3000"
-    environment:
-    - PORT=3000
-    volumes:
-      - ./:/app
-    command: [ "node", "app.js" ]
+      - "80:80"
